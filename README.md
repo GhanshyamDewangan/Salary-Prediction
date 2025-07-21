@@ -1,23 +1,49 @@
 Employee Salary Prediction AI
-This project is a Streamlit-based web application that predicts whether an employee's income is likely to be more than $50K or not, based on demographic and work-related inputs. It includes both real-time single predictions and batch predictions using CSV uploads. Additionally, the application provides optional voice input functionality for a more interactive user experience.
+A Streamlit-based web application that predicts whether an employee's income is likely to exceed $50K annually, based on demographic and occupational attributes. The application supports real-time predictions, batch predictions via CSV uploads, and optional voice input for interactive use.
 
+🧠 Introduction
+This AI-powered tool leverages a trained RandomForestClassifier on the UCI Adult Dataset to classify whether an individual's salary is > $50K or ≤ $50K. It provides both manual and voice-assisted input options, making it accessible and interactive. The application also supports batch processing for evaluating multiple records via CSV files.
+
+📑 Table of Contents
 Features
-Single Employee Salary Prediction
-Enter employee details manually or through voice input and predict whether their income is above or below $50K.
-
-Batch Prediction from CSV
-Upload a CSV file with employee records and predict the salary class for each entry in a tabular format.
-
-Speech Recognition (Optional)
-Users can use microphone input to fill in data for fields like age, education, occupation, and working hours.
-
-Machine Learning Model
-The app uses a trained RandomForestClassifier model to make predictions, based on a cleaned version of the adult.csv dataset.
-
-Model Accuracy Display
-Displays training accuracy of the model to inform users about the prediction quality.
 
 Tech Stack
+
+Dataset
+
+Installation
+
+Usage
+
+Voice Input Instructions
+
+Input Requirements for CSV Upload
+
+File Structure
+
+Troubleshooting
+
+Contributors
+
+License
+
+✨ Features
+Single Employee Salary Prediction
+Manually enter details or use voice input to predict whether the salary exceeds $50K.
+
+Batch Prediction from CSV
+Upload a CSV file containing multiple employee records and view predictions in a table.
+
+Speech Recognition (Optional)
+Users can fill in fields like age, education, occupation, and working hours using their voice.
+
+Machine Learning Model
+Uses a trained RandomForestClassifier on a preprocessed version of the UCI Adult dataset.
+
+Model Accuracy Display
+Real-time display of model training accuracy for user confidence.
+
+🧰 Tech Stack
 Python 3.8+
 
 Pandas
@@ -28,22 +54,23 @@ Scikit-learn
 
 Streamlit
 
-SpeechRecognition (Google API)
+SpeechRecognition (Google Speech API)
 
-Dataset
-The app uses the UCI Adult Dataset which contains demographic data used to predict income levels (>50K or ≤50K). The dataset is preprocessed to remove null values and encode categorical features.
+📊 Dataset
+This application uses the UCI Adult Dataset, a public dataset from the UCI Machine Learning Repository that includes demographic data used to predict income level.
 
 Key features used:
+age
 
-Age
+education
 
-Education
+occupation
 
-Occupation
+hours-per-week
 
-Hours-per-week
+All data is cleaned: missing values are removed, and categorical features are encoded.
 
-Installation
+⚙️ Installation
 Clone the Repository
 
 bash
@@ -51,14 +78,18 @@ Copy
 Edit
 git clone https://github.com/yourusername/salary-prediction-ai.git
 cd salary-prediction-ai
-Create and Activate Virtual Environment
+Create and Activate a Virtual Environment
 
 bash
 Copy
 Edit
+# For Linux/Mac
 python -m venv .venv
-source .venv/bin/activate   # For Linux/Mac
-.venv\Scripts\activate      # For Windows
+source .venv/bin/activate
+
+# For Windows
+python -m venv .venv
+.venv\Scripts\activate
 Install Required Libraries
 
 bash
@@ -71,7 +102,46 @@ bash
 Copy
 Edit
 streamlit run app.py
-File Structure
+🚀 Usage
+Once the app launches in your browser:
+
+Choose between Single Prediction or Batch Prediction.
+
+Enter employee details manually or opt for Voice Input.
+
+For batch predictions, upload a correctly formatted CSV file.
+
+View model accuracy and prediction results in real time.
+
+🎙️ Voice Input Instructions
+To use voice input:
+
+Ensure microphone access is enabled in your browser.
+
+Check the "Use Voice Input" box in the app.
+
+Speak clearly when prompted for:
+
+Age (e.g., "thirty-five")
+
+Education (e.g., "Bachelors")
+
+Occupation (e.g., "Sales")
+
+Hours-per-week (e.g., "forty")
+
+If speech input fails, manual entry will still be available.
+
+📂 Input Requirements for CSV Upload
+Your CSV file must contain the following column headers (case-sensitive):
+
+csv
+Copy
+Edit
+age,education,occupation,hours-per-week
+Each row should represent one employee record.
+
+🗂️ File Structure
 bash
 Copy
 Edit
@@ -81,30 +151,22 @@ salary-prediction-ai/
 ├── adult.csv               # Dataset used for training
 ├── requirements.txt        # List of required Python libraries
 └── README.md               # Project documentation
-Voice Input Instructions
-Enable microphone access in your browser.
+🛠️ Troubleshooting
+Speech Recognition Not Working?
 
-Click the checkbox Use Voice Input to activate speech recognition.
+Ensure your browser has microphone access.
 
-Speak the values clearly when prompted:
+Use Chrome or Edge for best compatibility.
 
-Age (number)
+Fallback to manual entry if speech input fails.
 
-Education (e.g., Bachelors, HS-grad)
+Streamlit App Not Launching?
 
-Occupation (e.g., Tech-support, Sales)
+Check your Python version (must be 3.8+).
 
-Hours-per-week (number)
+Reinstall packages: pip install -r requirements.txt.
 
-If speech input fails, the app allows fallback to manual entry.
+CSV Upload Fails?
 
-Input Requirements for CSV Upload
-Your CSV file must contain the following column names:
+Ensure the file includes the correct column headers and data types.
 
-age
-
-education
-
-occupation
-
-hours-per-week
