@@ -71,7 +71,7 @@ All data is cleaned: missing values are removed, and categorical features are en
 
 ---
 
-## ⚙ Installation
+##  Installation
 
 ### 1. Clone the Repository
 
