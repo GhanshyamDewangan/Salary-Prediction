@@ -10,22 +10,6 @@ This AI-powered tool leverages a trained `RandomForestClassifier` on the **UCI A
 
 ---
 
-##  Table of Contents
-
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Dataset](#-dataset)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Voice Input Instructions](#-voice-input-instructions)
-- [Input Requirements for CSV Upload](#-input-requirements-for-csv-upload)
-- [File Structure](#-file-structure)
-- [Troubleshooting](#-troubleshooting)
-- [Contributors](#-contributors)
-- [License](#-license)
-
----
-
 ##  Features
 
 - **Single Employee Salary Prediction**  
